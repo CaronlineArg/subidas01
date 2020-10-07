@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Sitio de prueba python        </title>
+        <style>
+          
+            #enlace1:hover{
+            color: rgb(11, 49, 155);    
+            font-size: medium;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            html {
+                
+                font-family: sans-serif;
+                line-height: 1.15;
+               
+            }
+           body{
+          
+            margin: 0;
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #202124;
+            text-align: left ;
+            
+            }
+            h1, h2{color: darkgray;
+            background-color: dimgray;}
+            .container{
+                background-color: rgb(81, 219, 150);
+            }
+            .table-sm td, .table-sm th {
+             padding: .3rem;
+            }
+            .table td, .table th {
+                
+                padding: .75rem;
+                vertical-align: top;
+                border-top: 1px solid #dee2e6;
+            }
+            *, ::after, ::before {
+                box-sizing: border-box;
+            }
+            user agent stylesheet
+            td {
+                display: table-cell;
+                vertical-align: inherit;
+            }
+            .table {
+                width: 100%;
+                margin-bottom: 1rem;
+                color: #212529;
+            }
+            table {
+                border-collapse: collapse;
+            }
+            user agent stylesheet
+            table {
+                border-collapse: separate;
+                border-spacing: 2px;
+            }
+          
+        </style>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    </head>
+    <body>
+        <h1>Titulo principal</h1>
+        <h2>Subtitulo</h2>
+        <div class="container">
+            <p>Parrafo largo sobre cosas inexactas, incoherentes, relleno inutil de prueba, palabras, zaraza, blah blah. Parrafo largo sobre cosas inexactas, incoherentes, relleno inutil de prueba, palabras, zaraza, blah blah Parrafo largo sobre cosas inexactas, incoherentes, relleno inutil de prueba, palabras, zaraza, blah blah. Parrafo largo sobre cosas inexactas, incoherentes, relleno inutil de prueba, palabras, zaraza, blah blah
+                Parrafo largo sobre cosas inexactas, incoherentes, relleno inutil de prueba, palabras, zaraza, blah blah.Parrafo largo sobre cosas inexactas, incoherentes, relleno inutil de prueba, palabras, zaraza, blah blahParrafo largo sobre cosas inexactas, incoherentes, relleno inutil de prueba, palabras, zaraza, blah blahParrafo largo sobre cosas inexactas, incoherentes, relleno inutil de prueba, palabras, zaraza, blah blahParrafo largo sobre cosas inexactas, incoherentes, relleno inutil de prueba, palabras, zaraza, blah blah
+            </p>
+        </div>
+        <h2>Lista desordenada</h2>
+        <ul>
+            <li>item 4</li>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+            <li>item 6</li>
+            <li>item 5</li>
+        </ul>
+        <h2>Lista ordenada</h2>
+        <ol>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+            <li>item 4</li>
+            <li>item 5</li>
+            <li>item 6</li>
+        </ol>
+        <h2>Formulario</h2>
+         <form>
+            te gusta la caquita?
+            si<input name="gusta" type="radio">
+            no<input name="noGusta" type="radio">
+            cuanto?
+            <input name="cuanto" type="text">
+            escribe un numero
+            <input name="asteriscos" type="number">
+            escribe una groseria
+            <input name="asteriscos" type="password">
+            enviar
+            <input name="listo" value="enviar" type="submit">
+        </form>
+        <h2>Enlace</h2>
+        <a id="enlace1" href="https://www.google.com" target="_blank">Enlace a Google</a>
+        
+        <h2>Tabla</h2>
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+                <tablebody>
+                    <tablehead>
+                        <tr><th>columna 1</th>
+                        <th>columna 2</th>
+                        <th>columna 3</th>
+                        <th>columna 4</th></tr>
+                    </tablehead>    
+                    <tr><td>info 1</td><td>info 2</td><td>info 3</td><td>info 4</td></tr>
+                    <tr><td>info 5</td><td>info 6</td><td>info 7</td><td>info 8</td></tr>
+                    <tr><td>info 9</td><td>info 10</td><td>info 11</td><td>info 12</td></tr>
+                    <tr><td>info 13</td><td>info 14</td><td>info 15</td><td>info 16</td></tr>
+                </tablebody>
+                    </table>
+        </div>
+        <h2>Imagen</h2>
+        <img src="https://www.yaconic.com/wp-content/uploads/2018/05/caca-1-1-1-1024x576.jpg" alt="una caquita" class="rounded-pill mx-auto d-block" alt="Responsive image">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
+</html>
