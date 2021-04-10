@@ -9,9 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
-  
+     
     </head>
     <!--atributo onload sirve que cuando se cargue la etiqueta en la que se encuentre, se llame a la funcion init();-->
     <body >
@@ -20,17 +18,15 @@
                         <div class="nav-wrapper">
                           <a href="#" class="brand-logo">Ingrese o Registrese</a>
                           <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li><a class="waves-effect waves-light btn modal-trigger" href="#ingrese">Ingrese</a></li>
-                            <li><a class="waves-effect waves-light btn modal-trigger" href="#registrese">Registrese</a></li>
+                            <li><a data-target="ingrese" class="waves-effect waves-light btn modal-trigger" href="#ingrese">Ingrese</a></li>
+                            <li><a data-target="registrese" class="btn modal-trigger" class="waves-effect waves-light btn modal-trigger" href="#registrese">Registrese</a></li>
                             
                           </ul>
                         </div>
                       </nav>
                             
 
-                    
-                    <!-- Modal Trigger -->
-                     <!-- <a class="" href="#modal1">Modal</a> -->
+
  
                     <!-- Modal Structure -->
                     <!--- ingrese usuario--->
@@ -62,7 +58,7 @@
                         </div>       
                     </div>
                                 <div class="modal-footer">
-                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                
                                 </div>
                     </div>
                         <!--- registre usuario--->
@@ -195,26 +191,7 @@
 
 
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyD1_CExyQlr8C15YA0mqsJICU-cQznnM8Y",
-    authDomain: "historial-calcu.firebaseapp.com",
-    projectId: "historial-calcu",
-    storageBucket: "historial-calcu.appspot.com",
-    messagingSenderId: "1081652937749",
-    appId: "1:1081652937749:web:c34b9adb9f48fb27e77a1c",
-    measurementId: "G-TDHEFQTL9E"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
 
     </body>
     </html>
