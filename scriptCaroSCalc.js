@@ -76,5 +76,16 @@ function resultado(){
 }
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, options);
+    var instances = M.Modal.init(elems);
+  });
+  $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that   wants to be triggered
+    $('.modal-trigger').leanModal();
+});
+$( document ).ready(function() {
+    $('.modal').modal();
+    $('#ingrese').on('click', function() {
+    });
+    $('#registrese').on('click', function() {
+    });
   });
