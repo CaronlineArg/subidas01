@@ -1,0 +1,220 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Caro's Calc</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='cssCaroSCalc.css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+  
+    </head>
+    <!--atributo onload sirve que cuando se cargue la etiqueta en la que se encuentre, se llame a la funcion init();-->
+    <body >
+                    <!-- sign in--->
+                    <nav>
+                        <div class="nav-wrapper">
+                          <a href="#" class="brand-logo">Ingrese o Registrese</a>
+                          <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li><a class="waves-effect waves-light btn modal-trigger" href="#ingrese">Ingrese</a></li>
+                            <li><a class="waves-effect waves-light btn modal-trigger" href="#registrese">Registrese</a></li>
+                            
+                          </ul>
+                        </div>
+                      </nav>
+                            
+
+                    
+                    <!-- Modal Trigger -->
+                     <!-- <a class="" href="#modal1">Modal</a> -->
+ 
+                    <!-- Modal Structure -->
+                    <!--- ingrese usuario--->
+                    <div id="ingrese" class="modal">
+                        <div class="modal-content">
+                            <h4>Ingrese</h4>
+                            <form id="ing" class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                            <input placeholder="Ingrese nombre de usuario" id="user_name" type="text" class="validate">
+                                            <label for="user_name">Nombre de usuario</label>
+                                                    
+                                    </div>
+                                            
+                                    <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="password" type="password" class="validate">
+                                                <label for="password">Contraseña</label>
+                                            </div>
+                                    </div>
+                                                    
+                                    <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                
+                                    </div>  
+                                </div>        
+                            </form> 
+                        </div>       
+                    </div>
+                                <div class="modal-footer">
+                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                </div>
+                    </div>
+                        <!--- registre usuario--->
+                    <div id="registrese" class="modal">
+                        <div class="modal-content">
+                            <h4>Registrese</h4>
+                            <form id="egr" class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                            <input placeholder="Ingrese nombre de usuario" id="user_name2" type="text" class="validate">
+                                            <label for="user_name2">Nombre de usuario</label>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="password2" type="password" class="validate">
+                                            <label for="password2">Contraseña</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                                
+                            </form>        
+                        </div>
+                        <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">submit</a>
+                        </div>
+                    </div>
+                   
+                   
+                    
+                    
+
+                      
+
+                    <!--- CALCU--->
+
+        <div class="contenido-body">
+            <div class="contenido-calcu">
+                <div class="pantalla">
+                  <!-- disabled significa que no puede ser clickeado--->  
+                    <input type="text" placeholder="0" disabled id="resultado-pantalla">
+                </div>
+                 <!-- llamas a la funcion getData() para obtener el valor de este elemento-->  
+               
+                 <div class="btn-cal btn-cal-radius" >
+                    <input type="button" value="7" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius" >
+                    <input type="button" value="8" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius" >
+                    <input type="button" value="9" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius">
+                    <input type="button" value="*" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius" >
+                    <input type="button" value="4" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius" >
+                    <input type="button" value="5" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius" >
+                    <input type="button" value="6" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius" >
+                    <input type="button" value="/" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius" >
+                    <input type="button" value="1" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius" >
+                    <input type="button" value="2" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius" >
+                    <input type="button" value="3" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius" >
+                    <input type="button" value="+" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius" >
+                    <input type="button" value="." onclick="getData(this)">
+                </div>
+                <!--<div class"btn-cal btn-cal-radius" >
+                <input type=="button" value="%" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius" >
+                <input type="button" value="**2" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius" >
+                <input type="button" value="sqrt()" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius" >
+                <input type="button" value="" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius" >
+                <input type="button" value="(" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius" >
+                <input type="button" value=")" onclick="getData(this)">
+                </div>
+                -->
+                <div class="btn-cal btn-cal-radius" >
+                    <input type="button" value="0" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius" >
+                    <input type="button" value="-" onclick="getData(this)">
+                </div>
+                <div class="btn-cal btn-cal-radius btn-resultado" >
+                    <input type="button" value="=" onclick="resultado(this)">
+                </div>
+                
+                <div class="historial">
+                    <input type="text" placeholder="Historial" disabled id="historial-pantalla">
+                </div>
+
+
+            </div>
+        </div>
+       
+    
+ 
+
+
+
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyD1_CExyQlr8C15YA0mqsJICU-cQznnM8Y",
+    authDomain: "historial-calcu.firebaseapp.com",
+    projectId: "historial-calcu",
+    storageBucket: "historial-calcu.appspot.com",
+    messagingSenderId: "1081652937749",
+    appId: "1:1081652937749:web:c34b9adb9f48fb27e77a1c",
+    measurementId: "G-TDHEFQTL9E"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+    </body>
+    </html>
