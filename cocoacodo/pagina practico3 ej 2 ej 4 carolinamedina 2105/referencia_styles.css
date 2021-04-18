@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(53, 53, 53);
+
+}
+header{color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;}
+a{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 174, 0);
+}
+nav{color: orangered;}
+main{
+    color:rgb(207, 204, 204);
+    font-family: Arial, Helvetica, sans-serif; }
