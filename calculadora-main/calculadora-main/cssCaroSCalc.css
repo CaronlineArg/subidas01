@@ -1,0 +1,97 @@
+
+  body {
+    margin: 0 ;
+    padding:0;
+    }
+  
+
+
+    
+.contenido-body{
+    display: flex;
+    width: 100%;
+    height: 150vh;
+    background-color: rgb(32, 109, 122);
+    justify-content: center;
+    align-items: center;
+}
+.contenido-calcu{
+    width: 400px;
+    height: 750px;
+    background-color: rgb(185, 179, 179);
+   border-radius: 10px;
+   box-shadow: 2px 1px 29px 6px rgba(73, 63, 63, 0.753);
+   padding: 20px 15px;
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-template-rows: 85px;
+   grid-gap: 20px ;
+}
+.pantalla{
+    background-color: rgb(46, 40, 40);
+    border-radius: 10px;
+    color: rgb(30, 114, 110);
+    padding: 15px;
+    grid-column: 1 / 5 ;
+}
+.pantalla > input {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    outline: inherit;
+    font-size: 50px;
+}
+.btn-cal-radius{
+    border-radius: 10px;
+}
+.btn-cal > input{
+    border: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+    color: rgb(142, 153, 153);
+    font-size: 35px;
+}
+btn-cal > .resultado{
+    background-color: rgb(255, 253, 253) ;
+    font-size: 50px;
+}
+.btn-cal > .limpiar{
+    background-color: rgb(224, 47, 47) ;
+    font-size: 50px;
+}
+.btn-limpiar :hover{
+    transition-duration: 0.4s;
+    background-color:  rgb(134, 132, 132);
+
+}
+.btn-resultado :hover{
+    transition-duration: 0.4s;
+    background-color: rgb(134, 132, 132);
+    color: white;
+    
+}
+.historial{
+    width: 370px;
+    height: 230px;
+    background-color: rgba(122, 122, 122, 0.651);
+    border-radius: 10px;
+    color: rgb(30, 114, 110);
+    padding: 15px;
+    grid-column: 1 / 5 ;
+}
+.historial > input {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    outline: inherit;
+    font-size: 50px;
+}
+#botonenviar{
+    margin-left:10px;
+     margin-right:auto;
+
+}
