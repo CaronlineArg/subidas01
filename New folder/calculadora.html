@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<head>
+    <meta charset=UTF8>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora</title>
+    <style>
+        .containerCalcu {
+            float: left;
+            background-color: black;
+            padding: 18px;
+            border-radius: 4px;
+            width: 170px;
+            box-sizing: border-box;
+        }
+
+        .containerPapel {
+          float: left;
+          background-color: rgba(216, 214, 207, 0.918);
+          width: 50%;
+          padding: 18px;
+          box-sizing: border-box;
+        }
+
+        input {
+            width: 123px;
+            height: 25px;
+            border-width: 3px;
+            margin: 0px 0px 8px 0px;
+            text-align: right;
+        }
+        button {
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            margin: 0px 0px 4px 0px;
+            color: rgb(189, 188, 188);
+            background-color: rgb(70, 38, 38);
+        }
+        .numero {
+            color: white;
+            background-color: rgb(34, 21, 21);
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>Pimera versión de la calculadora</h2>
+    <div class="containerCalcu">
+        <input type="text" name="display" id="display" />
+        <br/>
+        <button name="borrar" id="borrar" onclick="borrar()">AC</button>
+        <button name="del" id="del" onclick="del()">Del</button>
+        <br/>
+        <button class="numero" name="siete" id="siete" onclick="clickBoton(7)">7</button>
+        <button class="numero"name="ocho" id="ocho" onclick="clickBoton(8)">8</button>
+        <button class="numero"name="nueve" id="nueve" onclick="clickBoton(9)">9</button>
+        <button name="division" id="division" onclick="clickOperador('/')">/</button>
+        <br/>
+        <button class="numero"name="cuatro" id="cuatro" onclick="clickBoton(4)">4</button>
+        <button class="numero"name="cinco" id="cinco" onclick="clickBoton(5)">5</button>
+        <button class="numero"name="seis" id="seis" onclick="clickBoton(6)">6</button>
+        <button name="multiplicacion" id="multiplicacion" onclick="clickOperador('*')">*</button>
+        <br/>
+        <button class="numero"name="uno" id="uno" onclick="clickBoton(1)">1</button>
+        <button class="numero"name="dos" id="dos" onclick="clickBoton(2)">2</button>
+        <button class="numero"name="tres" id="tres" onclick="clickBoton(3)">3</button>
+        <button name="menos" id="menos" onclick="clickOperador('-')">-</button>
+        <br/>
+        <button class="operador"name="punto" id="punto"  onclick="clickBoton('.')">.</button>
+        <button class="numero"name="cero" id="cero" onclick="clickBoton(0)">0</button>
+        <button name="igual" id="igual" onclick="resultado()">=</button>
+        <button name="mas" id="mas" onclick="clickOperador('+')">+</button>
+    </div>
+
+    <div class="containerPapel" id="containerPapel">
+
+    </div>
+</body>
+<script>
+    var tiraPapel = [];
+
+    function clickOperador (boton) {
+      const operadores = ['+', '-', '*', '/'];
+      let input = document.getElementById("display").value;
+      if (operadores.indexOf(input.slice(-1,)) != -1) {
+        console.log(input);
+        document.getElementById("display").value = input.slice(0, -1);
+        }
+      clickBoton(boton);
+    }
+
+    function resultado() {
+      let input = document.getElementById("display").value;
+      let resultado = eval(input);
+      document.getElementById("display").value = resultado;
+      archivo(input, resultado);
+      imprimirPapel();
+     }
+    
+    function clickBoton(boton) {
+      let input = document.getElementById("display").value;
+      document.getElementById("display").value += boton;
+    }
+
+    function borrar() {
+      document.getElementById("display").value = "";
+    }
+
+    function del(){
+      let input = document.getElementById("display").value; 
+      document.getElementById("display").value = input.slice(0, -1);
+    }
+
+    function archivo(input, resultado) {
+      if (resultado != undefined) {
+        tiraPapel.push(input + ' = ' + resultado);
+                  }
+      if (tiraPapel.length > 10) {
+        tiraPapel = borrarPrimerElemento(tiraPapel);
+                  }
+      }
+    
+    function borrarPrimerElemento(elementos) {
+      elementos.shift();
+      console.log(elementos);
+      return elementos
+    }
+
+    function imprimirPapel() {
+        const codigo = bloqueCodigo();
+        document.getElementById("containerPapel").innerHTML = codigo;
+    }      
+
+    function bloqueCodigo () {
+      var i;
+      var codigo = '';
+      for (i = 0; i < tiraPapel.length; i++) {
+        var linea = `<p id="posicion_${i}">${tiraPapel[i]}</p>`;
+        codigo += linea;
+      }
+      return codigo
+    }
+</script>
+</html>
